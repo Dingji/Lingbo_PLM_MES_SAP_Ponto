@@ -15,6 +15,7 @@ public class BomFileLogger
 {
     private readonly string _basePath;
     private readonly ILogger<BomFileLogger> _logger;
+    private static readonly object FileWriteLock = new();
 
     public BomFileLogger(IConfiguration configuration, ILogger<BomFileLogger> logger)
     {
@@ -98,7 +99,10 @@ public class BomFileLogger
         sb.AppendLine($"  End of Report | Latest version lines: {latestVersion?.Lines.Count ?? 0}");
         sb.AppendLine("================================================================");
 
-        File.WriteAllText(filePath, sb.ToString(), Encoding.UTF8);
+        lock (FileWriteLock)
+        {
+            File.WriteAllText(filePath, sb.ToString(), Encoding.UTF8);
+        }
 
         var fileSize = new FileInfo(filePath).Length;
         _logger.LogInformation(
@@ -143,7 +147,9 @@ public class BomFileLogger
         }
 
         _logger.LogDebug("[FILE READ] Reading log file: {FileName}", safeName);
-        return File.ReadAllText(filePath, Encoding.UTF8);
+        using var fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+        using var reader = new StreamReader(fs, Encoding.UTF8);
+        return reader.ReadToEnd();
     }
 
     public void AppendMesSection(string logFilePath, string endpoint, string requestJson,
@@ -174,7 +180,10 @@ public class BomFileLogger
         sb.AppendLine();
         sb.AppendLine("================================================================");
 
-        File.AppendAllText(logFilePath, sb.ToString(), Encoding.UTF8);
+        lock (FileWriteLock)
+        {
+            File.AppendAllText(logFilePath, sb.ToString(), Encoding.UTF8);
+        }
         _logger.LogDebug("[FILE APPEND] MES section appended to {Path}", logFilePath);
     }
 }

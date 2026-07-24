@@ -12,6 +12,7 @@ public sealed class RequestStore
     private readonly ConcurrentQueue<string> _orderedIds = new();
     private const int MaxRecords = 500;
     private readonly string _persistPath;
+    private readonly SemaphoreSlim _fileLock = new(1, 1);
     private static readonly JsonSerializerOptions JsonOpts = new()
     {
         WriteIndented = false,
@@ -99,17 +100,24 @@ public sealed class RequestStore
     private void SaveToFile()
     {
         if (string.IsNullOrEmpty(_persistPath)) return;
+        _fileLock.Wait();
         try
         {
             var dir = Path.GetDirectoryName(_persistPath);
             if (!string.IsNullOrEmpty(dir)) Directory.CreateDirectory(dir);
 
             var json = JsonSerializer.Serialize(_records.Values.ToList(), JsonOpts);
-            File.WriteAllText(_persistPath, json);
+            var tmpPath = _persistPath + ".tmp";
+            File.WriteAllText(tmpPath, json);
+            File.Move(tmpPath, _persistPath, overwrite: true);
         }
         catch
         {
             // Silently fail rather than disrupt request processing
+        }
+        finally
+        {
+            _fileLock.Release();
         }
     }
 }

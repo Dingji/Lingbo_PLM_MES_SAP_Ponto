@@ -16,6 +16,7 @@ public class SyncStore
     private int _sequence;
     private const int MaxRecords = 2000;
     private readonly string _persistPath;
+    private readonly SemaphoreSlim _fileLock = new(1, 1);
     private static readonly JsonSerializerOptions JsonOpts = new()
     {
         WriteIndented = false,
@@ -84,6 +85,7 @@ public class SyncStore
     private void SaveToFile()
     {
         if (string.IsNullOrEmpty(_persistPath)) return;
+        _fileLock.Wait();
         try
         {
             var dir = Path.GetDirectoryName(_persistPath);
@@ -96,11 +98,17 @@ public class SyncStore
             };
 
             var json = JsonSerializer.Serialize(data, JsonOpts);
-            File.WriteAllText(_persistPath, json);
+            var tmpPath = _persistPath + ".tmp";
+            File.WriteAllText(tmpPath, json);
+            File.Move(tmpPath, _persistPath, overwrite: true);
         }
         catch
         {
             // Silently fail rather than disrupt sync operations
+        }
+        finally
+        {
+            _fileLock.Release();
         }
     }
 

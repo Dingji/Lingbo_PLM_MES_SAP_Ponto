@@ -288,13 +288,23 @@ public sealed class FileSyncProcessor
                 $"File size {contentLength.Value} bytes exceeds the maximum allowed size of {_options.MaxFileSizeBytes} bytes.");
         }
 
-        // Stream the content to disk to avoid loading large files entirely into memory.
-        await using var contentStream = await response.Content.ReadAsStreamAsync(cancellationToken);
-        await using var fileStream = new FileStream(
-            destinationPath, FileMode.Create, FileAccess.Write, FileShare.None, 81920, useAsync: true);
+        // Stream to a temp file first, then atomically move to avoid FileShare.None conflicts.
+        var tempPath = destinationPath + ".download_" + Guid.NewGuid().ToString("N")[..8];
+        try
+        {
+            await using var contentStream = await response.Content.ReadAsStreamAsync(cancellationToken);
+            await using var fileStream = new FileStream(
+                tempPath, FileMode.Create, FileAccess.Write, FileShare.None, 81920, useAsync: true);
 
-        await contentStream.CopyToAsync(fileStream, cancellationToken);
+            await contentStream.CopyToAsync(fileStream, cancellationToken);
+        }
+        catch
+        {
+            try { File.Delete(tempPath); } catch { }
+            throw;
+        }
 
+        File.Move(tempPath, destinationPath, overwrite: true);
         _logger.LogInformation("[FileSync] Download completed: {Path}", destinationPath);
     }
 
@@ -303,7 +313,7 @@ public sealed class FileSyncProcessor
     /// </summary>
     private static async Task<string> ComputeFileMd5Async(string filePath, CancellationToken cancellationToken)
     {
-        await using var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read, 81920, useAsync: true);
+        await using var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite, 81920, useAsync: true);
         var hashBytes = await MD5.HashDataAsync(stream, cancellationToken);
         return Convert.ToHexString(hashBytes).ToLowerInvariant();
     }
@@ -343,7 +353,7 @@ public sealed class FileSyncProcessor
         // Fallback: detect by magic bytes.
         try
         {
-            using var fs = new FileStream(fullPath, FileMode.Open, FileAccess.Read, FileShare.Read);
+            using var fs = new FileStream(fullPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
             if (fs.Length < 4) return null;
 
             Span<byte> magic = stackalloc byte[8];

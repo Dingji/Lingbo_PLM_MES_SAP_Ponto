@@ -49,9 +49,16 @@ public sealed class LogReaderService
             return null;
         }
 
-        var content = File.ReadAllText(filePath);
+        var content = ReadFileShared(filePath);
         // Strip base64 file content to reduce transfer size.
         content = FileContentRegex.Replace(content, @"""file_content"": ""[base64]""");
         return content;
+    }
+
+    private static string ReadFileShared(string filePath)
+    {
+        using var fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+        using var reader = new StreamReader(fs);
+        return reader.ReadToEnd();
     }
 }

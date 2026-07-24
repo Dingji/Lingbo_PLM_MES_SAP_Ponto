@@ -553,7 +553,7 @@ END;
 上面的触发器已经实装。  
 2. 收到触发器之后需要获取到异动文件和item 我给你一个如何通过item 获得file_info的路径：  
 - 在表Item中会有主键Id
-- Item中的主键在Attachment_map 表中对应了Parent_ID2的字段，你可以通过此查到这条记录。然后记录下这个记录里的Attach_ID 和 Version值
+- Item中的主键在Attachment_map 表中对应了Parent_ID的字段，你可以通过此查到这条记录。然后记录下这个记录里的Attach_ID 和 Version值
 - 在Version表中有字段Attach_ID 和 Version_Num，这两个字段，分别对应上面的Attachment_map的Attach_ID 和 Version字段的值 ，通过这两个值获取到该表主键Id
 - 在VERSION_FILE_MAP表里面有字段VERSION_ID 这个字段就是上面的Version表里面的主键。 通过上面的主键能找到对应的记录，在该条记录中，有字段FILE_ID ， 这个是文件主键。
 - 在FILES表中，Id就是刚刚的FILE_ID 的值，通过这个值能搜索到记录，只要获得这个记录里面的FILENAME  

@@ -8,6 +8,7 @@ public sealed class FileSyncFileLogger
 {
     private readonly string _basePath;
     private readonly ILogger<FileSyncFileLogger> _logger;
+    private static readonly object FileWriteLock = new();
 
     public FileSyncFileLogger(IConfiguration configuration, ILogger<FileSyncFileLogger> logger)
     {
@@ -151,7 +152,10 @@ public sealed class FileSyncFileLogger
         sb.AppendLine($"  End of Request Log | Status: {response.Status} | Duration: {response.DurationMs}ms");
         sb.AppendLine("================================================================================");
 
-        File.WriteAllText(filePath, sb.ToString(), Encoding.UTF8);
+        lock (FileWriteLock)
+        {
+            File.WriteAllText(filePath, sb.ToString(), Encoding.UTF8);
+        }
 
         _logger.LogInformation(
             "[FILE WRITE] Request log written | File: {FileName} | Size: {Size} bytes",
@@ -198,7 +202,10 @@ public sealed class FileSyncFileLogger
         sb.AppendLine();
         sb.AppendLine("================================================================================");
 
-        File.AppendAllText(logFilePath, sb.ToString(), Encoding.UTF8);
+        lock (FileWriteLock)
+        {
+            File.AppendAllText(logFilePath, sb.ToString(), Encoding.UTF8);
+        }
 
         var info = new FileInfo(logFilePath);
         _logger.LogInformation(
@@ -228,7 +235,9 @@ public sealed class FileSyncFileLogger
         if (!File.Exists(filePath))
             return null;
 
-        return File.ReadAllText(filePath, Encoding.UTF8);
+        using var fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+        using var reader = new StreamReader(fs, Encoding.UTF8);
+        return reader.ReadToEnd();
     }
 
     private static string SanitizeBase64Content(string json)

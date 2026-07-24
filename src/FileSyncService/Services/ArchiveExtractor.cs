@@ -48,7 +48,8 @@ public static class ArchiveExtractor
     {
         var leaves = new List<ExtractedFile>();
 
-        using var archive = ArchiveFactory.OpenArchive(archivePath, new ReaderOptions());
+        using var fs = new FileStream(archivePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite, 81920);
+        using var archive = ArchiveFactory.OpenArchive(fs, new ReaderOptions());
         CollectFromArchive(archive, prefix: "", leaves, depth: 0, cancellationToken);
 
         return leaves;

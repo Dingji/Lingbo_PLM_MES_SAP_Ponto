@@ -209,7 +209,13 @@ public sealed class MesFileUploadService
                 .ToList();
         }
 
-        var bytes = await File.ReadAllBytesAsync(result.FullPath, cancellationToken);
+        byte[] bytes;
+        await using (var fs = new FileStream(result.FullPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite, 81920, useAsync: true))
+        using (var ms = new MemoryStream())
+        {
+            await fs.CopyToAsync(ms, cancellationToken);
+            bytes = ms.ToArray();
+        }
         return [(result.FileName, bytes)];
     }
 }

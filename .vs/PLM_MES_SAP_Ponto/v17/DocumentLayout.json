@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Project\\ms\\Lingbo_PLM_MES_SAP_Ponto\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|src\\PlmMesSync\\PlmMesSync.csproj|d:\\project\\ms\\lingbo_plm_mes_sap_ponto\\src\\plmmessync\\plmmessync.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|src\\PlmMesSync\\PlmMesSync.csproj|solutionrelative:src\\plmmessync\\plmmessync.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PlmMesSync",
+              "DocumentMoniker": "D:\\Project\\ms\\Lingbo_PLM_MES_SAP_Ponto\\src\\PlmMesSync\\PlmMesSync.csproj",
+              "RelativeDocumentMoniker": "src\\PlmMesSync\\PlmMesSync.csproj",
+              "ToolTip": "D:\\Project\\ms\\Lingbo_PLM_MES_SAP_Ponto\\src\\PlmMesSync\\PlmMesSync.csproj",
+              "RelativeToolTip": "src\\PlmMesSync\\PlmMesSync.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-07-24T12:35:26.62Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
