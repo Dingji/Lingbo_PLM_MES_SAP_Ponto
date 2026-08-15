@@ -54,11 +54,11 @@ public class MesBomMtrl
     public decimal Dosage { get; set; }
 
     [JsonPropertyName("point_str")]
-    public string? PointStr { get; set; }
+    public string PointStr { get; set; } = "";
 
     [JsonPropertyName("mbom_ver")]
-    public string? MbomVer { get; set; }
+    public string MbomVer { get; set; } = "";
 
     [JsonPropertyName("remark")]
-    public string? Remark { get; set; }
+    public string Remark { get; set; } = "";
 }

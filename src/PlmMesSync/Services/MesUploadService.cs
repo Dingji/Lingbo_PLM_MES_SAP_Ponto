@@ -209,9 +209,9 @@ public class MesUploadService
                 IsMain = isMain,
                 MainCode = mainCode,
                 Dosage = dosage,
-                PointStr = string.IsNullOrEmpty(line.RefDesig) ? null : line.RefDesig,
-                MbomVer = line.ComponentRev,
-                Remark = line.Description ?? ""
+                PointStr = string.IsNullOrEmpty(line.RefDesig) ? "" : line.RefDesig,
+                MbomVer = string.IsNullOrEmpty(line.ComponentRev) ? "" : line.ComponentRev,
+                Remark = string.IsNullOrEmpty(line.Description) ? "" : line.Description
             });
         }
 
@@ -220,8 +220,8 @@ public class MesUploadService
         {
             DocType = AppConstants.DocTypeBom,
             UpdateType = AppConstants.UpdateType,
-            Data = new List<MesBomData>
-            {
+            Data =
+            [
                 new()
                 {
                     OrgCode = AppConstants.OrgCode,
@@ -232,7 +232,7 @@ public class MesUploadService
                     Remark = prodDesc,
                     BsBomMtrl = mtrlList
                 }
-            }
+            ]
         };
     }
 }

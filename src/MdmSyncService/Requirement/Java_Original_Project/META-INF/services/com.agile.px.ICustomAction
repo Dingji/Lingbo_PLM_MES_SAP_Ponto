@@ -1,0 +1,7 @@
+com.jiexin.plm.px.ItemToSapTestPx
+com.jiexin.plm.px.BomCreateToSapTestPx
+com.jiexin.plm.px.BomUpdateToSapTestPx
+com.jiexin.plm.px.ItemToMdmTestPx
+com.jiexin.plm.px.ItemToSapCreate
+com.jiexin.plm.px.ItemToSapUpdate
+

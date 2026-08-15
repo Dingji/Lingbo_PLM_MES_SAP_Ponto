@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 共有8个级别，按照从低到高为：ALL < TRACE < DEBUG < INFO < WARN < ERROR < FATAL < OFF -->
+<!-- status指定log4j本身的打印日志的级别 -->
+<Configuration status="WARN">
+
+	<Properties>
+		<Property name="base.package">com.dsbj.plm.px</Property>
+		<Property name="log.level">${sys:log4j.log.level:-DEBUG}</Property>
+		<Property name="logfile.path">${sys:log4j.logfile.path:-{{LOG_PATH}}}/</Property>
+		<Property name="logfile.arch.path">${sys:log4j.logfile.path:-{{LOG_PATH}}}/${date:yyyy-MM}</Property>
+		<Property name="logfile.arch.suffix">%d{yyyy-MM-dd}-%i.log.gz</Property>
+		<Property name="logOut.pattern">%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight{%5p} --- [%15.15t] %-40.40c{1.} : %m%n</Property>
+		<Property name="logfile.pattern">%d{yyyy-MM-dd HH:mm:ss.SSS} %5p [%t] &lt;%c&gt; : %m%n</Property>
+		<Property name="timestamp.pattern">%d{yyyy-MM-dd HH:mm:ss.SSS}{GMT+0}</Property>
+	</Properties>
+
+	<Appenders>
+		<!-- 输出到控制台 -->
+		<Console name="STDOUT" target="SYSTEM_OUT">
+			<ThresholdFilter level="ERROR" onMatch="DENY" onMismatch="ACCEPT" />
+			<PatternLayout pattern="${logOut.pattern}"/>
+		</Console>
+		<Console name="STDERR" target="SYSTEM_ERR">
+			<ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY" />
+			<PatternLayout pattern="${logOut.pattern}"/>
+		</Console>
+
+		<!-- 输出到日志文件 -->
+		<RollingRandomAccessFile name="SERVICE_LOG_FILE" fileName="${logfile.path}/AgilePx.log"
+								 filePattern="${logfile.arch.path}/AgilePx-${logfile.arch.suffix}">
+			<PatternLayout pattern="${logfile.pattern}"/>
+			<Policies>
+				<!-- 基于时间的滚动策略(interval属性). The default value is 1. -->
+				<TimeBasedTriggeringPolicy />
+				<!-- 基于文件大小的滚动策略(size属性)：SizeBasedTriggeringPolicy -->
+			</Policies>
+			<!-- 日志删除策略 -->
+			<!-- 用来指定同一个文件夹下最多有几个日志文件时开始删除最旧的，创建新的(通过max属性). The default value is 7. -->
+			<DefaultRolloverStrategy>
+				<!-- maxDepth:要访问的目录的最大级别数 -->
+				<Delete basePath="${logfile.path}" maxDepth="2">
+					<!-- 按通配符匹配文件 -->
+					<IfFileName glob="*/AgilePx-*.log.gz" />
+					<!-- 删除180天之前的 -->
+					<IfLastModified age="180d" />
+				</Delete>
+			</DefaultRolloverStrategy>
+		</RollingRandomAccessFile>
+
+	</Appenders>
+
+	<Loggers>
+		<!-- Root Logger -->
+		<Root level="INFO">
+			<AppenderRef ref="STDOUT"/>
+			<AppenderRef ref="STDERR"/>
+			<AppenderRef ref="SERVICE_LOG_FILE" />
+		</Root>
+
+		<!-- additivity="false"只在自定义的Appender中进行输出 -->
+		<!-- Base Logger -->
+		<Logger name="${base.package}" level="${log.level}"/>
+	</Loggers>
+
+</Configuration>

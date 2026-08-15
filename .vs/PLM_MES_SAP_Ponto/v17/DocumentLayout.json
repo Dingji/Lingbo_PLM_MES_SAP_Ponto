@@ -3,6 +3,38 @@
   "WorkspaceRootPath": "D:\\Project\\ms\\Lingbo_PLM_MES_SAP_Ponto\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B2C3D4E5-F6A7-8901-BCDE-F12345678901}|src\\FileSyncService\\FileSyncService.csproj|d:\\project\\ms\\lingbo_plm_mes_sap_ponto\\src\\filesyncservice\\models\\dto\\filesyncresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2C3D4E5-F6A7-8901-BCDE-F12345678901}|src\\FileSyncService\\FileSyncService.csproj|solutionrelative:src\\filesyncservice\\models\\dto\\filesyncresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2C3D4E5-F6A7-8901-BCDE-F12345678901}|src\\FileSyncService\\FileSyncService.csproj|d:\\project\\ms\\lingbo_plm_mes_sap_ponto\\src\\filesyncservice\\endpoints\\filesyncendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2C3D4E5-F6A7-8901-BCDE-F12345678901}|src\\FileSyncService\\FileSyncService.csproj|solutionrelative:src\\filesyncservice\\endpoints\\filesyncendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2C3D4E5-F6A7-8901-BCDE-F12345678901}|src\\FileSyncService\\FileSyncService.csproj|d:\\project\\ms\\lingbo_plm_mes_sap_ponto\\src\\filesyncservice\\endpoints\\dashboardendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2C3D4E5-F6A7-8901-BCDE-F12345678901}|src\\FileSyncService\\FileSyncService.csproj|solutionrelative:src\\filesyncservice\\endpoints\\dashboardendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2C3D4E5-F6A7-8901-BCDE-F12345678901}|src\\FileSyncService\\FileSyncService.csproj|d:\\project\\ms\\lingbo_plm_mes_sap_ponto\\src\\filesyncservice\\models\\dto\\mesfileuploadrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2C3D4E5-F6A7-8901-BCDE-F12345678901}|src\\FileSyncService\\FileSyncService.csproj|solutionrelative:src\\filesyncservice\\models\\dto\\mesfileuploadrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2C3D4E5-F6A7-8901-BCDE-F12345678901}|src\\FileSyncService\\FileSyncService.csproj|d:\\project\\ms\\lingbo_plm_mes_sap_ponto\\src\\filesyncservice\\models\\dto\\filesyncrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2C3D4E5-F6A7-8901-BCDE-F12345678901}|src\\FileSyncService\\FileSyncService.csproj|solutionrelative:src\\filesyncservice\\models\\dto\\filesyncrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2C3D4E5-F6A7-8901-BCDE-F12345678901}|src\\FileSyncService\\FileSyncService.csproj|d:\\project\\ms\\lingbo_plm_mes_sap_ponto\\src\\filesyncservice\\models\\dto\\fileinforesult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2C3D4E5-F6A7-8901-BCDE-F12345678901}|src\\FileSyncService\\FileSyncService.csproj|solutionrelative:src\\filesyncservice\\models\\dto\\fileinforesult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|src\\PlmMesSync\\PlmMesSync.csproj|d:\\project\\ms\\lingbo_plm_mes_sap_ponto\\src\\plmmessync\\services\\mesuploadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|src\\PlmMesSync\\PlmMesSync.csproj|solutionrelative:src\\plmmessync\\services\\mesuploadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2C3D4E5-F6A7-8901-BCDE-F12345678901}|src\\FileSyncService\\FileSyncService.csproj|d:\\project\\ms\\lingbo_plm_mes_sap_ponto\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{B2C3D4E5-F6A7-8901-BCDE-F12345678901}|src\\FileSyncService\\FileSyncService.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|src\\PlmMesSync\\PlmMesSync.csproj|d:\\project\\ms\\lingbo_plm_mes_sap_ponto\\src\\plmmessync\\plmmessync.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|src\\PlmMesSync\\PlmMesSync.csproj|solutionrelative:src\\plmmessync\\plmmessync.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
@@ -14,19 +46,115 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FileSyncEndpoints.cs",
+              "DocumentMoniker": "D:\\Project\\ms\\Lingbo_PLM_MES_SAP_Ponto\\src\\FileSyncService\\Endpoints\\FileSyncEndpoints.cs",
+              "RelativeDocumentMoniker": "src\\FileSyncService\\Endpoints\\FileSyncEndpoints.cs",
+              "ToolTip": "D:\\Project\\ms\\Lingbo_PLM_MES_SAP_Ponto\\src\\FileSyncService\\Endpoints\\FileSyncEndpoints.cs",
+              "RelativeToolTip": "src\\FileSyncService\\Endpoints\\FileSyncEndpoints.cs",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAswKkAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-30T01:43:56.257Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DashboardEndpoints.cs",
+              "DocumentMoniker": "D:\\Project\\ms\\Lingbo_PLM_MES_SAP_Ponto\\src\\FileSyncService\\Endpoints\\DashboardEndpoints.cs",
+              "RelativeDocumentMoniker": "src\\FileSyncService\\Endpoints\\DashboardEndpoints.cs",
+              "ToolTip": "D:\\Project\\ms\\Lingbo_PLM_MES_SAP_Ponto\\src\\FileSyncService\\Endpoints\\DashboardEndpoints.cs",
+              "RelativeToolTip": "src\\FileSyncService\\Endpoints\\DashboardEndpoints.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-30T01:43:26.132Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MesFileUploadRequest.cs",
+              "DocumentMoniker": "D:\\Project\\ms\\Lingbo_PLM_MES_SAP_Ponto\\src\\FileSyncService\\Models\\Dto\\MesFileUploadRequest.cs",
+              "RelativeDocumentMoniker": "src\\FileSyncService\\Models\\Dto\\MesFileUploadRequest.cs",
+              "ToolTip": "D:\\Project\\ms\\Lingbo_PLM_MES_SAP_Ponto\\src\\FileSyncService\\Models\\Dto\\MesFileUploadRequest.cs",
+              "RelativeToolTip": "src\\FileSyncService\\Models\\Dto\\MesFileUploadRequest.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAcwDMAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-30T00:53:07.364Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "FileSyncResponse.cs",
+              "DocumentMoniker": "D:\\Project\\ms\\Lingbo_PLM_MES_SAP_Ponto\\src\\FileSyncService\\Models\\Dto\\FileSyncResponse.cs",
+              "RelativeDocumentMoniker": "src\\FileSyncService\\Models\\Dto\\FileSyncResponse.cs",
+              "ToolTip": "D:\\Project\\ms\\Lingbo_PLM_MES_SAP_Ponto\\src\\FileSyncService\\Models\\Dto\\FileSyncResponse.cs",
+              "RelativeToolTip": "src\\FileSyncService\\Models\\Dto\\FileSyncResponse.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAiwDUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-30T00:53:07.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FileSyncRequest.cs",
+              "DocumentMoniker": "D:\\Project\\ms\\Lingbo_PLM_MES_SAP_Ponto\\src\\FileSyncService\\Models\\Dto\\FileSyncRequest.cs",
+              "RelativeDocumentMoniker": "src\\FileSyncService\\Models\\Dto\\FileSyncRequest.cs",
+              "ToolTip": "D:\\Project\\ms\\Lingbo_PLM_MES_SAP_Ponto\\src\\FileSyncService\\Models\\Dto\\FileSyncRequest.cs",
+              "RelativeToolTip": "src\\FileSyncService\\Models\\Dto\\FileSyncRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-30T00:53:02.679Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FileInfoResult.cs",
+              "DocumentMoniker": "D:\\Project\\ms\\Lingbo_PLM_MES_SAP_Ponto\\src\\FileSyncService\\Models\\Dto\\FileInfoResult.cs",
+              "RelativeDocumentMoniker": "src\\FileSyncService\\Models\\Dto\\FileInfoResult.cs",
+              "ToolTip": "D:\\Project\\ms\\Lingbo_PLM_MES_SAP_Ponto\\src\\FileSyncService\\Models\\Dto\\FileInfoResult.cs",
+              "RelativeToolTip": "src\\FileSyncService\\Models\\Dto\\FileInfoResult.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA4wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-30T00:52:57.172Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MesUploadService.cs",
+              "DocumentMoniker": "D:\\Project\\ms\\Lingbo_PLM_MES_SAP_Ponto\\src\\PlmMesSync\\Services\\MesUploadService.cs",
+              "RelativeDocumentMoniker": "src\\PlmMesSync\\Services\\MesUploadService.cs",
+              "ToolTip": "D:\\Project\\ms\\Lingbo_PLM_MES_SAP_Ponto\\src\\PlmMesSync\\Services\\MesUploadService.cs",
+              "RelativeToolTip": "src\\PlmMesSync\\Services\\MesUploadService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-29T03:00:46.304Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "README.md",
+              "DocumentMoniker": "D:\\Project\\ms\\Lingbo_PLM_MES_SAP_Ponto\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "D:\\Project\\ms\\Lingbo_PLM_MES_SAP_Ponto\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAAMkEAAAAAAAAAAASwOgEAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-07-29T03:00:05.67Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "PlmMesSync",
               "DocumentMoniker": "D:\\Project\\ms\\Lingbo_PLM_MES_SAP_Ponto\\src\\PlmMesSync\\PlmMesSync.csproj",
               "RelativeDocumentMoniker": "src\\PlmMesSync\\PlmMesSync.csproj",
               "ToolTip": "D:\\Project\\ms\\Lingbo_PLM_MES_SAP_Ponto\\src\\PlmMesSync\\PlmMesSync.csproj",
               "RelativeToolTip": "src\\PlmMesSync\\PlmMesSync.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-07-24T12:35:26.62Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-24T12:35:26.62Z"
             }
           ]
         }
